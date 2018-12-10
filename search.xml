@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[将 DOTA 数据集的标注转换为 COCO 格式]]></title>
+    <url>%2F2018%2F12%2F10%2FConvert-dataset-to-coco-like%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>数据集</tag>
+        <tag>COCO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[NP-Hard问题]]></title>
     <url>%2F2018%2F12%2F07%2FNP-Hard%2F</url>
     <content type="text"><![CDATA[简单理解 NP, P, NP-Complete 和 NP-Hardref: https://www.cnblogs.com/sancyun/p/4250360.html P 是一类可以通过确定性图灵机（以下简称 图灵机）在多项式时间 (Polynomial time) 内解决的问题集合。 NP 是一类可以通过非确定性图灵机 ( Non-deterministic Turing Machine) 在多项式时间 (Polynomial time) 内解决的决策问题集合。 P 是 NP 的子集，也就是说任何可以被图灵机在多项式时间内解决的问题都可以被非确定性的图灵机解决。 接下来说说 NP 里最难得问题 NP-Complete。 其定义如下， 如果一个决策问题 L 是 NP-Complete 的，那么 L 具备以下两个性质： L 是 NP（给定一个解决 NP-Complete 的方案 (solution，感兴趣的读者可以思考一下 solution 和 answer 的区别)，可以很快验证是否可行，但不存在已知高效的方案 。） NP 里的任何问题可以在多项式时间内转为 L。 而 NP-Hard 只需要具备 NP-Complete 的第二个性质，因此 NP-Complete 是 NP-Hard 的子集。 这四者的关系如下图（假设 P!= NP）：]]></content>
