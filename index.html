@@ -314,6 +314,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2018/12/18/pytorch-cuda-unknown-error/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/18/pytorch-cuda-unknown-error/" itemprop="url">PyTorch 调用 GPU 报 CUDA unknown error</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T11:43:23+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-12-18T12:15:55+08:00">
+                2018-12-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。</p>
+<p>报错信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu:25</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/18/pytorch-cuda-unknown-error/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2018/12/11/No-Space-in-tmp/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -421,7 +581,7 @@
           <p>今天在服务器上编译 PyTorch 时遇到了 <code>/tmp</code> 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 <code>/</code> 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，<code>/</code>挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/11/No-Space-in-tmp/#more" rel="contents">
+            <a class="btn" href="/2018/12/11/No-Space-in-tmp/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -581,7 +741,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install cython</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/10/Convert-dataset-to-coco-like/#more" rel="contents">
+            <a class="btn" href="/2018/12/10/Convert-dataset-to-coco-like/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -739,7 +899,7 @@
           <h2 id="简单理解-NP-P-NP-Complete-和-NP-Hard"><a href="#简单理解-NP-P-NP-Complete-和-NP-Hard" class="headerlink" title="简单理解 NP, P, NP-Complete 和 NP-Hard"></a>简单理解 NP, P, NP-Complete 和 NP-Hard</h2><p>ref: <a href="https://www.cnblogs.com/sancyun/p/4250360.html" target="_blank" rel="noopener">https://www.cnblogs.com/sancyun/p/4250360.html</a> </p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/07/NP-Hard/#more" rel="contents">
+            <a class="btn" href="/2018/12/07/NP-Hard/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -875,7 +1035,7 @@
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/07/hello-world/#more" rel="contents">
+            <a class="btn" href="/2018/12/07/hello-world/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -959,7 +1119,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -981,7 +1141,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1058,19 +1218,7 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
 
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
   
 </div>
 
@@ -1554,9 +1702,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
-
 
   
 

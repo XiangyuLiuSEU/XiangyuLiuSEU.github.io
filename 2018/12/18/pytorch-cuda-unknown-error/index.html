@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,">
+  <meta name="keywords" content="pytorch,cuda,error,">
 
 
 
@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
-<meta name="keywords" content="Ubuntu">
+<meta name="description" content="最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。 报错信息 1RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/">
+<meta name="keywords" content="pytorch,cuda,error">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译时遇到 &#x2F;tmp 文件夹空间不足的解决办法">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/2018/12/11/No-Space-in-tmp/index.html">
+<meta property="og:title" content="PyTorch 调用 GPU 报 CUDA unknown error">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2018/12/18/pytorch-cuda-unknown-error/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
+<meta property="og:description" content="最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。 报错信息 1RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-11T08:31:09.213Z">
+<meta property="og:updated_time" content="2018-12-18T04:15:55.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译时遇到 &#x2F;tmp 文件夹空间不足的解决办法">
-<meta name="twitter:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
+<meta name="twitter:title" content="PyTorch 调用 GPU 报 CUDA unknown error">
+<meta name="twitter:description" content="最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。 报错信息 1RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/">
 
 
 
@@ -153,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/2018/12/11/No-Space-in-tmp/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2018/12/18/pytorch-cuda-unknown-error/">
 
 
 
 
 
-  <title>编译时遇到 /tmp 文件夹空间不足的解决办法 | Liu Xiang-Yu's blog</title>
+  <title>PyTorch 调用 GPU 报 CUDA unknown error | Liu Xiang-Yu's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2018/12/11/No-Space-in-tmp/">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2018/12/18/pytorch-cuda-unknown-error/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Xiang-Yu">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编译时遇到 /tmp 文件夹空间不足的解决办法</h1>
+          <h1 class="post-title" itemprop="name headline">PyTorch 调用 GPU 报 CUDA unknown error</h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T16:18:10+08:00">
-                2018-12-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T11:43:23+08:00">
+                2018-12-18
               </time>
             
 
@@ -363,8 +363,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-11T16:31:09+08:00">
-                2018-12-11
+              <time title="Post modified" itemprop="dateModified" datetime="2018-12-18T12:15:55+08:00">
+                2018-12-18
               </time>
             
           </span>
@@ -419,13 +419,18 @@
       
 
       
-        <p>今天在服务器上编译 PyTorch 时遇到了 <code>/tmp</code> 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 <code>/</code> 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，<code>/</code>挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法</p>
+        <p>最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。</p>
+<p>报错信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu:25</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 <code>/home</code> ）新建一个临时文件夹供编译时临时使用就可以了</p>
-<h3 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h3><p>在用户目录下新建临时文件夹，并使之生效即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/lxy</span><br><span class="line">mkdir tmp</span><br><span class="line"><span class="built_in">export</span> TMPDIR = /home/lxy/tmp</span><br></pre></td></tr></table></figure>
-<p>这样重新执行编译命令就可以顺利编译了</p>
-<p>还可以将最后一句代码写进 <code>.bashrc</code> 文件，然后 <code>source</code> 一下，以后临时文件都会存放在该临时文件夹</p>
+<h3 id="方法1：重新安装显卡驱动和-CUDA"><a href="#方法1：重新安装显卡驱动和-CUDA" class="headerlink" title="方法1：重新安装显卡驱动和 CUDA"></a>方法1：重新安装显卡驱动和 CUDA</h3><p>既然是驱动问题，那么自然地重新安装一下最新版的显卡驱动应该就没问题了，注意驱动安装完成之后最好要重启一下机器。安装完驱动之后使用 conda 重新安装 PyTorch。但是由于服务器是公用资源，为了不影响同学使用，只得使用权宜之计。</p>
+<h3 id="方法2：root-权限运行-python"><a href="#方法2：root-权限运行-python" class="headerlink" title="方法2：root 权限运行 python"></a>方法2：root 权限运行 python</h3><p>网上的解决方法除了重装驱动之外，还有一种暂时的解决办法。因为正确安装显卡驱动会保证 Torch 调用显卡时自动进行正常的初始化，那我也可以手动赋予 python root 权限去初始化显卡。</p>
+<p>在尝试的过程中发现，由于服务器环境比较混乱，<code>sudo</code> 提升权限之后运行的不是我自己的 python，而且 <code>PYTHONPATH</code> 和 一些环境变量也不对。解决方法如下：</p>
+<p>首先在 python 代码中加上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">'/path/to/cocoapi/PythonAPI'</span>) <span class="comment"># my code needs pycocotools</span></span><br><span class="line">os.environ[<span class="string">"CUDA_DEVICE_ORDER"</span>]=<span class="string">"PCI_BUS_ID"</span> <span class="comment"># optional</span></span><br><span class="line">os.environ[<span class="string">"CUDA_VISIBLE_DEVICES"</span>]=<span class="string">"0"</span></span><br></pre></td></tr></table></figure>
+<p>然后在运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /path/to/your/python tools/train_net_step.py --dataset dota --cfg xx.yml --use_tfboard</span><br></pre></td></tr></table></figure>
+<p>然后就可以开始训练了</p>
 <p>完</p>
 
       
@@ -444,7 +449,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
+            <a href="/tags/pytorch/" rel="tag"><i class="fa fa-tag"></i> pytorch</a>
+          
+            <a href="/tags/cuda/" rel="tag"><i class="fa fa-tag"></i> cuda</a>
+          
+            <a href="/tags/error/" rel="tag"><i class="fa fa-tag"></i> error</a>
           
         </div>
       
@@ -457,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/10/Convert-dataset-to-coco-like/" rel="next" title="将 DOTA 数据集的标注转换为 COCO 格式">
-                <i class="fa fa-chevron-left"></i> 将 DOTA 数据集的标注转换为 COCO 格式
+              <a href="/2018/12/11/No-Space-in-tmp/" rel="next" title="编译时遇到 /tmp 文件夹空间不足的解决办法">
+                <i class="fa fa-chevron-left"></i> 编译时遇到 /tmp 文件夹空间不足的解决办法
               </a>
             
           </div>
@@ -466,10 +475,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/18/pytorch-cuda-unknown-error/" rel="prev" title="PyTorch 调用 GPU 报 CUDA unknown error">
-                PyTorch 调用 GPU 报 CUDA unknown error <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建文件夹"><span class="nav-number">1.</span> <span class="nav-text">新建文件夹</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1：重新安装显卡驱动和-CUDA"><span class="nav-number">1.</span> <span class="nav-text">方法1：重新安装显卡驱动和 CUDA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2：root-权限运行-python"><span class="nav-number">2.</span> <span class="nav-text">方法2：root 权限运行 python</span></a></li></ol></div>
             
 
           </div>

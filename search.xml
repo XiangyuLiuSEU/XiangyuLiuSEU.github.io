@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PyTorch 调用 GPU 报 CUDA unknown error]]></title>
+    <url>%2F2018%2F12%2F18%2Fpytorch-cuda-unknown-error%2F</url>
+    <content type="text"><![CDATA[最近为了跑 PANet，在服务器上安装了 Detectron.pytorch，安装过程还挺顺利，但是只要调用 GPU 运算就报未知错误，网上搜索一番发现可能是显卡驱动安装有问题，导致 Torch 调用显卡时无法正常初始化。这里记录一下网上的解决方法。 报错信息 1RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu:25 方法1：重新安装显卡驱动和 CUDA既然是驱动问题，那么自然地重新安装一下最新版的显卡驱动应该就没问题了，注意驱动安装完成之后最好要重启一下机器。安装完驱动之后使用 conda 重新安装 PyTorch。但是由于服务器是公用资源，为了不影响同学使用，只得使用权宜之计。 方法2：root 权限运行 python网上的解决方法除了重装驱动之外，还有一种暂时的解决办法。因为正确安装显卡驱动会保证 Torch 调用显卡时自动进行正常的初始化，那我也可以手动赋予 python root 权限去初始化显卡。 在尝试的过程中发现，由于服务器环境比较混乱，sudo 提升权限之后运行的不是我自己的 python，而且 PYTHONPATH 和 一些环境变量也不对。解决方法如下： 首先在 python 代码中加上 12345import osimport syssys.path.append('/path/to/cocoapi/PythonAPI') # my code needs pycocotoolsos.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID" # optionalos.environ["CUDA_VISIBLE_DEVICES"]="0" 然后在运行 1sudo /path/to/your/python tools/train_net_step.py --dataset dota --cfg xx.yml --use_tfboard 然后就可以开始训练了 完]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>cuda</tag>
+        <tag>error</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[编译时遇到 /tmp 文件夹空间不足的解决办法]]></title>
     <url>%2F2018%2F12%2F11%2FNo-Space-in-tmp%2F</url>
     <content type="text"><![CDATA[今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法 其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 /home ）新建一个临时文件夹供编译时临时使用就可以了 新建文件夹在用户目录下新建临时文件夹，并使之生效即可 123cd /home/lxymkdir tmpexport TMPDIR = /home/lxy/tmp 这样重新执行编译命令就可以顺利编译了 还可以将最后一句代码写进 .bashrc 文件，然后 source 一下，以后临时文件都会存放在该临时文件夹 完]]></content>
