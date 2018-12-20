@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="算法,LeetCode,">
 
 
 
@@ -112,13 +112,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/error/index.html">
+<meta name="description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
+<meta name="keywords" content="算法,LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查找回文字符串：马拉车算法 Manacher&#39;s Algorithm">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table10.png">
+<meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table4.png">
+<meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table5.png">
+<meta property="og:updated_time" content="2018-12-20T12:44:50.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="查找回文字符串：马拉车算法 Manacher&#39;s Algorithm">
+<meta name="twitter:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
+<meta name="twitter:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table10.png">
 
 
 
@@ -148,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/error/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/">
 
 
 
 
 
-  <title>Tag: error | Liu Xiang-Yu's blog</title>
+  <title>查找回文字符串：马拉车算法 Manacher's Algorithm | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +308,217 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>error<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/18/pytorch-cuda-unknown-error/" itemprop="url">
-              
-                <span itemprop="name">PyTorch 调用 GPU 报 CUDA unknown error</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">查找回文字符串：马拉车算法 Manacher's Algorithm</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-18T11:43:23+08:00" content="2018-12-18">
-          12-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-20T18:32:40+08:00">
+                2018-12-20
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-12-20T20:44:50+08:00">
+                2018-12-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。</p>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="string">"babad"</span></span><br><span class="line">Output: <span class="string">"bab"</span> <span class="keyword">or</span> <span class="string">"aba"</span></span><br></pre></td></tr></table></figure>
+<p>最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。</p>
+<p>LeetCode  <a href="https://leetcode.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">https://leetcode.com/problems/longest-palindromic-substring</a></p>
+<p>英文解释：<a href="https://articles.leetcode.com/longest-palindromic-substring-part-ii" target="_blank" rel="noopener">https://articles.leetcode.com/longest-palindromic-substring-part-ii</a></p>
+<p>中文解释：<a href="https://www.felix021.com/blog/read.php?2040" target="_blank" rel="noopener">https://www.felix021.com/blog/read.php?2040</a></p>
+<a id="more"></a>
+<h3>Manacher’s Algorithm</h3>
+<p>首先，假设输入字符串为 <code>abaaba</code>，显然输入即为最长的回文字符串，因此输出应为 <code>abaaba</code>。让我们分两步来解决这个问题。</p>
+<h4>1. 预处理</h4>
+<p>我们想一下可能会发现，回文字符串分为两种情况：奇数长度和偶数长度。这两种情况显然是无法直接合并处理的，因此马拉车算法首先对输入的字符串进行了一下处理：在每个字符的两侧插入一个特定字符 <code>#</code>，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S = &apos;abaaba&apos;</span><br><span class="line">T = &apos;#a#b#a#a#b#a#&apos;</span><br></pre></td></tr></table></figure>
+<p>这样做的好处是所有的字符串都变成了奇数长度，这样我们就不需要分别考虑了</p>
+<p>预处理部分的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preProcess</span><span class="params">(self, s)</span>:</span></span><br><span class="line">    l = [c <span class="keyword">for</span> c <span class="keyword">in</span> s]</span><br><span class="line">    ret = <span class="string">'#'</span>.join(l)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># add ^ and $ at both bounds to avoid out of index problem</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'^#'</span>+ret+<span class="string">'#$'</span></span><br></pre></td></tr></table></figure>
+<h4>2. 算法部分</h4>
+<p>算法的思想是这样的，对于一个预处理之后的字符串 <code>T</code>，定义一个具有相同长度的数组 <code>P</code>，使得 <code>P[i]</code> 等于以 <code>T[i]</code> 为中心的 <code>T</code> 中最长回文字符串的半径，对于上面的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T = # a # b # a # a # b # a #</span><br><span class="line">P = 0 1 0 3 0 1 6 1 0 3 0 1 0</span><br></pre></td></tr></table></figure>
+<p>我们可以发现，<code>P</code> 具有某种对称性质，我们可以利用这个性质在一定程度上减小我们的计算复杂度。那么所有的情况都是对称的吗？可惜的是并不是，只有在某种特定的条件下这种情况才成立。但是没关系，我们一样可以利用这个性质减少计算，只是需要找到不满足这种情况的条件就可以了</p>
+<p>我们来看一个稍微复杂一点的例子，S = ‘babcbabcbaccba’</p>
+<img src="/2018/12/20/Manacher-Algorithm/palindrome_table10.png">
+<p>上图中假设当前 <code>i</code> 为 13， 实线表示回文字符串 <code>abcbabcba</code>的中心，虚线表示两侧的边界。我们可以看到，由于回文字符串的对称性质，我们可以快速的知道 <code>P[13]</code> 的值，也就是等于 <code>P[9]</code> 处的值。然后继续看</p>
+<img src="/2018/12/20/Manacher-Algorithm/palindrome_table4.png">
+<p>现在我们到了下标为 15 的位置，<code>p[15]</code> 的值是多少呢？如果我们继续根据对称性质，那么就会得到 <code>P[15] = P[7] = 7</code>，但很显然是错误的。</p>
+<img src="/2018/12/20/Manacher-Algorithm/palindrome_table5.png">
+<p>如果以 <code>T[15]</code> 为中心，我们得到的回文字符串为 <code>#a#b#c#b#a#</code>，而 <code>T[7]</code> 处的回文字符串要更长，这是因为我们当前的以 <code>C</code> 为中心的回文字符串并不能完全包含以 <code>T[7]</code> 为中心的回文字符串，因此就造成了不满足对称性质的情况。解决办法也很简单，只要取 <code>P[i] = min(P[i'], R-i)</code> 就可以了。</p>
+<p>用伪代码总结一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if P[i&apos;] &lt;= R - i</span><br><span class="line">then P[i] = P[i&apos;]</span><br><span class="line">else P[i] &lt;= P[i&apos;]</span><br></pre></td></tr></table></figure>
+<p>然后我们需要确定 <code>R</code> 和 <code>C</code> 的更新策略：如果以 <code>i</code> 为中心的回文字符串的超过了 <code>R</code>，则令新的中心<code>C = i</code>，然后把 <code>R</code>  扩展到新的回文字符串的右边界。</p>
+<p>全部代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestPalindrome</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># Manacher's algorithm</span></span><br><span class="line">        T = self.preProcess(s)</span><br><span class="line">        length = len(T)</span><br><span class="line">        C, R = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        P = [<span class="number">0</span>] * length</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; length<span class="number">-1</span>:</span><br><span class="line">            <span class="comment"># i_mirror can reduce the computation of P[i]</span></span><br><span class="line">            i_mirror = <span class="number">2</span>*C - i  <span class="comment"># equals to C - (i - C)</span></span><br><span class="line">            </span><br><span class="line">            P[i] = min(P[i_mirror], R-i) <span class="keyword">if</span> R &gt; i <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># expand the palindrome centered at i</span></span><br><span class="line">            <span class="keyword">while</span> T[i + P[i] + <span class="number">1</span>] == T[i - P[i] - <span class="number">1</span>]:</span><br><span class="line">                P[i] += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># adjust center if the expanded palindrome pasts R</span></span><br><span class="line">            <span class="keyword">if</span> R &lt; i + P[i]:</span><br><span class="line">                C = i</span><br><span class="line">                R = i + P[i]</span><br><span class="line">                </span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        maxLength = max(P)</span><br><span class="line">        centerIndex = P.index(maxLength)</span><br><span class="line">        </span><br><span class="line">        start = (centerIndex - maxLength) // <span class="number">2</span></span><br><span class="line">        stop = start + maxLength</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> s[start:stop]</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">preProcess</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        l = [c <span class="keyword">for</span> c <span class="keyword">in</span> s]</span><br><span class="line">        ret = <span class="string">'#'</span>.join(l)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># add ^ and $ at both bounds to avoid out of index problem</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'^#'</span>+ret+<span class="string">'#$'</span></span><br></pre></td></tr></table></figure>
+<h4>最后</h4>
+<p>按理说线性复杂度的算法已经是很快了，当然 LeetCode 上还有很多大神的神仙代码更快，反正我是看不懂…… 🙂</p>
+<p>完</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/18/pytorch-cuda-unknown-error/" rel="next" title="PyTorch 调用 GPU 报 CUDA unknown error">
+                <i class="fa fa-chevron-left"></i> PyTorch 调用 GPU 报 CUDA unknown error
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +526,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +630,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Manacher’s Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1. 预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2. 算法部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -595,6 +798,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

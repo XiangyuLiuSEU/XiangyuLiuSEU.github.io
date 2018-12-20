@@ -423,8 +423,10 @@
 <p>报错信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (30) : unknown error at /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/THCTensorRandom.cu:25</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="方法1：重新安装显卡驱动和-CUDA"><a href="#方法1：重新安装显卡驱动和-CUDA" class="headerlink" title="方法1：重新安装显卡驱动和 CUDA"></a>方法1：重新安装显卡驱动和 CUDA</h3><p>既然是驱动问题，那么自然地重新安装一下最新版的显卡驱动应该就没问题了，注意驱动安装完成之后最好要重启一下机器。安装完驱动之后使用 conda 重新安装 PyTorch。但是由于服务器是公用资源，为了不影响同学使用，只得使用权宜之计。</p>
-<h3 id="方法2：root-权限运行-python"><a href="#方法2：root-权限运行-python" class="headerlink" title="方法2：root 权限运行 python"></a>方法2：root 权限运行 python</h3><p>网上的解决方法除了重装驱动之外，还有一种暂时的解决办法。因为正确安装显卡驱动会保证 Torch 调用显卡时自动进行正常的初始化，那我也可以手动赋予 python root 权限去初始化显卡。</p>
+<h3>方法1：重新安装显卡驱动和 CUDA</h3>
+<p>既然是驱动问题，那么自然地重新安装一下最新版的显卡驱动应该就没问题了，注意驱动安装完成之后最好要重启一下机器。安装完驱动之后使用 conda 重新安装 PyTorch。但是由于服务器是公用资源，为了不影响同学使用，只得使用权宜之计。</p>
+<h3>方法2：root 权限运行 python</h3>
+<p>网上的解决方法除了重装驱动之外，还有一种暂时的解决办法。因为正确安装显卡驱动会保证 Torch 调用显卡时自动进行正常的初始化，那我也可以手动赋予 python root 权限去初始化显卡。</p>
 <p>在尝试的过程中发现，由于服务器环境比较混乱，<code>sudo</code> 提升权限之后运行的不是我自己的 python，而且 <code>PYTHONPATH</code> 和 一些环境变量也不对。解决方法如下：</p>
 <p>首先在 python 代码中加上</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">'/path/to/cocoapi/PythonAPI'</span>) <span class="comment"># my code needs pycocotools</span></span><br><span class="line">os.environ[<span class="string">"CUDA_DEVICE_ORDER"</span>]=<span class="string">"PCI_BUS_ID"</span> <span class="comment"># optional</span></span><br><span class="line">os.environ[<span class="string">"CUDA_VISIBLE_DEVICES"</span>]=<span class="string">"0"</span></span><br></pre></td></tr></table></figure>
@@ -475,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/20/Manacher-Algorithm/" rel="prev" title="查找回文字符串：马拉车算法 Manacher's Algorithm">
+                查找回文字符串：马拉车算法 Manacher's Algorithm <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -616,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1：重新安装显卡驱动和-CUDA"><span class="nav-number">1.</span> <span class="nav-text">方法1：重新安装显卡驱动和 CUDA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2：root-权限运行-python"><span class="nav-number">2.</span> <span class="nav-text">方法2：root 权限运行 python</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">方法1：重新安装显卡驱动和 CUDA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">方法2：root 权限运行 python</span></a></li></ol></div>
             
 
           </div>
@@ -1152,6 +1158,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
