@@ -112,21 +112,21 @@
 
 
 
-<meta name="description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
+<meta name="description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一个线性复杂度的算法——马拉车算法。 LeetCode：https://leetcode.com/problems/longest-palindro">
 <meta name="keywords" content="算法,LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查找回文字符串：马拉车算法 Manacher&#39;s Algorithm">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
+<meta property="og:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一个线性复杂度的算法——马拉车算法。 LeetCode：https://leetcode.com/problems/longest-palindro">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table10.png">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table4.png">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table5.png">
-<meta property="og:updated_time" content="2018-12-20T12:44:50.079Z">
+<meta property="og:updated_time" content="2018-12-29T12:48:50.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找回文字符串：马拉车算法 Manacher&#39;s Algorithm">
-<meta name="twitter:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。 LeetCode  https://leetcode.com/problems/longest-p">
+<meta name="twitter:description" content="在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。 Example: 12Input: &quot;babad&quot;Output: &quot;bab&quot; or &quot;aba&quot; 最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一个线性复杂度的算法——马拉车算法。 LeetCode：https://leetcode.com/problems/longest-palindro">
 <meta name="twitter:image" content="http://xiangyuliuseu.github.io/2018/12/20/Manacher-Algorithm/palindrome_table10.png">
 
 
@@ -357,19 +357,7 @@
             
 
             
-              <span class="post-meta-divider">|</span>
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-20T20:44:50+08:00">
-                2018-12-20
-              </time>
             
           </span>
 
@@ -426,8 +414,8 @@
         <p>在 LeetCode 看到一个题，给定一个字符串，返回最大长度的回文子字符串。</p>
 <p>Example:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="string">"babad"</span></span><br><span class="line">Output: <span class="string">"bab"</span> <span class="keyword">or</span> <span class="string">"aba"</span></span><br></pre></td></tr></table></figure>
-<p>最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一下在网上看到的线性复杂度的算法——马拉车算法。</p>
-<p>LeetCode  <a href="https://leetcode.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">https://leetcode.com/problems/longest-palindromic-substring</a></p>
+<p>最简单的方法就是暴力循环遍历，但是算法复杂度为 $O(n^3)$, 因此记录一个线性复杂度的算法——马拉车算法。</p>
+<p>LeetCode：<a href="https://leetcode.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">https://leetcode.com/problems/longest-palindromic-substring</a></p>
 <p>英文解释：<a href="https://articles.leetcode.com/longest-palindromic-substring-part-ii" target="_blank" rel="noopener">https://articles.leetcode.com/longest-palindromic-substring-part-ii</a></p>
 <p>中文解释：<a href="https://www.felix021.com/blog/read.php?2040" target="_blank" rel="noopener">https://www.felix021.com/blog/read.php?2040</a></p>
 <a id="more"></a>
@@ -676,7 +664,34 @@
   
 </div>
 
+<div>
+<span class="post-meta-item-icon">
+  <i class="fa fa-calendar"></i>
+</span>
+<span id="span_dt_dt"> </span>
+<script language="javascript">
+function show_date_time(){
+  window.setTimeout("show_date_time()", 1000);
+  var enday=new Date("2019/6/11 00:00:00");
+  var today=new Date();
+  timeold=(enday.getTime()-today.getTime());
+  sectimeold=timeold/1000;
+  secondsold=Math.floor(sectimeold);
+  msPerDay=24*60*60*1000;
+  e_daysold=timeold/msPerDay;
+  daysold=Math.floor(e_daysold);
+  e_hrsold=(e_daysold-daysold)*24;
+  hrsold=Math.floor(e_hrsold);
+  e_minsold=(e_hrsold-hrsold)*60;
+  minsold=Math.floor((e_hrsold-hrsold)*60);
+  seconds=Math.floor((e_minsold-minsold)*60);
+  span_dt_dt.innerHTML="<b>"+daysold+" days "+hrsold+" hours "+minsold+" mins "+seconds+" secs to 1000 DAYS!"+"</b>";
+}
+show_date_time();
+</script></div>
 
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

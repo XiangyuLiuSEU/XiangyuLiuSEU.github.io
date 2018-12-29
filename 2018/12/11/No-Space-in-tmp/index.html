@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
+<meta name="description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法 其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 /home ）新建一个临时文件夹供编译时临时使用就可以了">
 <meta name="keywords" content="Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译时遇到 &#x2F;tmp 文件夹空间不足的解决办法">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2018/12/11/No-Space-in-tmp/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
+<meta property="og:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法 其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 /home ）新建一个临时文件夹供编译时临时使用就可以了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-11T08:31:09.213Z">
+<meta property="og:updated_time" content="2018-12-20T12:51:23.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译时遇到 &#x2F;tmp 文件夹空间不足的解决办法">
-<meta name="twitter:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法">
+<meta name="twitter:description" content="今天在服务器上编译 PyTorch 时遇到了 /tmp 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 / 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，/挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法 其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 /home ）新建一个临时文件夹供编译时临时使用就可以了">
 
 
 
@@ -353,19 +353,7 @@
             
 
             
-              <span class="post-meta-divider">|</span>
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-12-11T16:31:09+08:00">
-                2018-12-11
-              </time>
             
           </span>
 
@@ -420,8 +408,8 @@
 
       
         <p>今天在服务器上编译 PyTorch 时遇到了 <code>/tmp</code> 文件夹空间不足的问题，一般来说安装 Ubuntu 时给 <code>/</code> 挂载点分配足够的硬盘空间就不会遇到这个问题，但是服务器有很多人用，文件比较混乱，<code>/</code>挂载点已经达到了 100% 的空间使用率，因此百度到了一个解决办法</p>
-<a id="more"></a>
 <p>其实解决方法很简单，只需要在有硬盘空间的挂载点下（例如 <code>/home</code> ）新建一个临时文件夹供编译时临时使用就可以了</p>
+<a id="more"></a>
 <h3>新建文件夹</h3>
 <p>在用户目录下新建临时文件夹，并使之生效即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/lxy</span><br><span class="line">mkdir tmp</span><br><span class="line"><span class="built_in">export</span> TMPDIR = /home/lxy/tmp</span><br></pre></td></tr></table></figure>
@@ -648,7 +636,34 @@
   
 </div>
 
+<div>
+<span class="post-meta-item-icon">
+  <i class="fa fa-calendar"></i>
+</span>
+<span id="span_dt_dt"> </span>
+<script language="javascript">
+function show_date_time(){
+  window.setTimeout("show_date_time()", 1000);
+  var enday=new Date("2019/6/11 00:00:00");
+  var today=new Date();
+  timeold=(enday.getTime()-today.getTime());
+  sectimeold=timeold/1000;
+  secondsold=Math.floor(sectimeold);
+  msPerDay=24*60*60*1000;
+  e_daysold=timeold/msPerDay;
+  daysold=Math.floor(e_daysold);
+  e_hrsold=(e_daysold-daysold)*24;
+  hrsold=Math.floor(e_hrsold);
+  e_minsold=(e_hrsold-hrsold)*60;
+  minsold=Math.floor((e_hrsold-hrsold)*60);
+  seconds=Math.floor((e_minsold-minsold)*60);
+  span_dt_dt.innerHTML="<b>"+daysold+" days "+hrsold+" hours "+minsold+" mins "+seconds+" secs to 1000 DAYS!"+"</b>";
+}
+show_date_time();
+</script></div>
 
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
