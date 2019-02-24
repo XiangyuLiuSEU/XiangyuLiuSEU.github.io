@@ -112,13 +112,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/pytorch/index.html">
+<meta name="description" content="ref: https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server 在远程服务器上没有安装浏览器的情况下，通过在本地建立 SSH 隧道的方法使用服务器的 Jupyter Notebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过 SSH 隧道连接远程服务器的 Jupyter Notebook">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/02/24/Remote-jupyter-notebook/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="ref: https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server 在远程服务器上没有安装浏览器的情况下，通过在本地建立 SSH 隧道的方法使用服务器的 Jupyter Notebook">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-24T14:05:50.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="通过 SSH 隧道连接远程服务器的 Jupyter Notebook">
+<meta name="twitter:description" content="ref: https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server 在远程服务器上没有安装浏览器的情况下，通过在本地建立 SSH 隧道的方法使用服务器的 Jupyter Notebook">
 
 
 
@@ -148,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/pytorch/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/02/24/Remote-jupyter-notebook/">
 
 
 
 
 
-  <title>Tag: pytorch | Liu Xiang-Yu's blog</title>
+  <title>通过 SSH 隧道连接远程服务器的 Jupyter Notebook | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +303,195 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>pytorch<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/02/24/Remote-jupyter-notebook/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/18/pytorch-cuda-unknown-error/" itemprop="url">
-              
-                <span itemprop="name">PyTorch 调用 GPU 报 CUDA unknown error</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">通过 SSH 隧道连接远程服务器的 Jupyter Notebook</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-18T11:43:23+08:00" content="2018-12-18">
-          12-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-24T18:38:16+08:00">
+                2019-02-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ref: <a href="https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server" target="_blank" rel="noopener">https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server</a></p>
+<p>在远程服务器上没有安装浏览器的情况下，通过在本地建立 SSH 隧道的方法使用服务器的 Jupyter Notebook</p>
+<a id="more"></a>
+<h3>1. 服务器端</h3>
+<p>首先确保服务器端安装了 Jupyter Notebook，如果需要使用 conda 环境，还要安装 ipykernel 等包</p>
+<p>进入虚拟环境，运行 Jupyter Notebook</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+<p>根据输出的信息可以看到无法找到可用的浏览器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[I 09:56:37.551 NotebookApp] Serving notebooks from <span class="built_in">local</span> directory: /home/liuxiangyu</span><br><span class="line">[I 09:56:37.551 NotebookApp] The Jupyter Notebook is running at:</span><br><span class="line">[I 09:56:37.552 NotebookApp] http://172.17.0.2:8888/?token=******</span><br><span class="line">[I 09:56:37.552 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br><span class="line">[W 09:56:37.557 NotebookApp] No web browser found: could not locate runnable browser.</span><br></pre></td></tr></table></figure>
+<p>注意：如果报错信息提示地址已经被占用，那么久需要修改一下 Jupyter Notebook 的默认地址。修改方式如下：</p>
+<p>配置 Jupyter Notebook</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+<p>运行命令后将会在主目录下生成 <code>.jupyter/jupyter_notebook_config.py</code> 文件，打开文件找到 <code>#c.NotebookApp.ip = 'localhost'</code>，把 <code>#</code> 号去掉，<code>localhost</code> 改成自己的 ip 地址（在上面输出信息中可以看到）</p>
+<p>保存后关闭文件，重启 Jupyter Notebook 即可</p>
+<p>至此，服务器端的准备已经完成了，我们需要记住服务器的地址 <code>172.17.0.2</code> 和端口号 <code>8008</code></p>
+<h3>2. 本地</h3>
+<p>以 Windows 系统为例，下载 putty</p>
+<ol>
+<li>
+<p>打开 putty 后在服务器地址和端口处正确填写信息，然后在左侧 ssh 选项下选择 Tunnels</p>
+</li>
+<li>
+<p>Source port 填写本地想用的端口号，以 <code>8000</code> 为例</p>
+</li>
+<li>
+<p>Destination 填写 服务器地址 <code>172.17.0.2:8008</code></p>
+</li>
+<li>
+<p>其他选项不要修改，最后不要忘记点击 Add，然后连接即可</p>
+</li>
+</ol>
+<p>连接到服务器后进入相应的虚拟环境，运行 Jupyter Notebook，然后打开浏览器输入地址 <a href="https://localhost:8000" target="_blank" rel="noopener">https://localhost:8000</a> 即可打开 notebook</p>
+<p>Done! 😎</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/Manacher-Algorithm/" rel="next" title="查找回文字符串：马拉车算法 Manacher's Algorithm">
+                <i class="fa fa-chevron-left"></i> 查找回文字符串：马拉车算法 Manacher's Algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +499,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +603,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1. 服务器端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2. 本地</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +798,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
