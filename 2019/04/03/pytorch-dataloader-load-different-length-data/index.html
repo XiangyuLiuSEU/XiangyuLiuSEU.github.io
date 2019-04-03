@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="pytorch,">
 
 
 
@@ -112,13 +112,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/archives/page/2/index.html">
+<meta name="description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
+<meta name="keywords" content="pytorch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch 的 dataloader 如何读取变长数据">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg">
+<meta property="og:updated_time" content="2019-04-03T06:51:52.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="PyTorch 的 dataloader 如何读取变长数据">
+<meta name="twitter:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
+<meta name="twitter:image" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg">
 
 
 
@@ -148,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/archives/page/2/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/">
 
 
 
 
 
-  <title>Archive | Liu Xiang-Yu's blog</title>
+  <title>PyTorch 的 dataloader 如何读取变长数据 | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,146 +306,202 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">PyTorch 的 dataloader 如何读取变长数据</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T14:37:17+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 13 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/11/No-Space-in-tmp/" itemprop="url">
-              
-                <span itemprop="name">编译时遇到 /tmp 文件夹空间不足的解决办法</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T16:18:10+08:00" content="2018-12-11">
-          12-11
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/10/Convert-dataset-to-coco-like/" itemprop="url">
-              
-                <span itemprop="name">将 DOTA 数据集的标注转换为 COCO 格式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-10T21:32:58+08:00" content="2018-12-10">
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/07/NP-Hard/" itemprop="url">
-              
-                <span itemprop="name">NP-Hard问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-07T17:26:07+08:00" content="2018-12-07">
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p><img src="/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg" alt="图标"></p>
+<p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
+<p>原文链接：<a href="https://zhuanlan.zhihu.com/p/60129684" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60129684</a></p>
+<hr>
+<p>最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用<code>torch.nn.utils.rnn.PackedSequence</code>来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。</p>
+<h2>pytorch里面dataset的工作逻辑：</h2>
+<p>pytorch的数据载入主要是这么几个逻辑，从底层一步步来讲，我用h5矩阵，图片和音频三个方面来举例，首先是逻辑层次是，首先把data装进用<code>torch.utils.data.Dataset</code>装进一个dataset的对象里面，然后在把dataset这个对象传递给一个<code>torch.utils.data.DataLoader</code></p>
+<h3>dataset的工作逻辑</h3>
+<p>数据集的切分一般在dataset这个对象上做处理，支持随机切分等，详见<a href="http://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/data.html" target="_blank" rel="noopener">torch.utils.data - PyTorch master documentation</a>，一般来讲，我都是写一个torch.utils.data.Dataset的子类，里面就三个成员函数，初始化，长度和读取，一般在读取你自己定义的读取方法，我习惯的是h5矩阵的话，就读一段（子矩阵），图片就是一张图，或者一段音频。</p>
+<p>这里面有个很关键的点，就是<strong>dataset的逻辑是一次读一个item，最好不要在dataset层面一次slice一段，slice这个层面的事情交给dataloader来做，原因我一会说</strong>。</p>
+<p>记住dataset的逻辑在于装和item读取，预处理，其他都不要做。</p>
+<h3>dataloader的工作逻辑</h3>
+<p>dataloader层面主要就是slice读取数据，shuffle也是在这个层面来做。</p>
+<p>dataloader有几个关键点，很多地方都零零碎碎的提到过，我总结下，</p>
+<ol>
+<li>是稀松平常的batch_size, sampler, shuffle这几个稀松平常的不提，shuffle是在dataset的item层面做混洗，</li>
+<li>注意，num_workers是一个多线程的读取，当batchsize&gt;1的时候，多线程读取item, 然后各个item调用一个collate_fn合并成新的tensor，其中h5依然是个坑，anaconda安装的h5是不支持多线程的，请参考并行 HDF5 和 h5py安装并行h5，至于num*_*worker以及pin_memoru的具体使用，参考<a href="https://zhuanlan.zhihu.com/p/39752167" target="_blank" rel="noopener">云梦：Pytorch 提速指南</a>，不重复造轮子。</li>
+<li>关于这个collate\fn是重点，当开启多线程了一个，多线程先后读取了dataset里面batch_size个item以后，生成了一个list,里面每个元素就是batchsize个item，然后用collatefn合并，如果没有指定的collatefns的话，就直接合并成一个高一维的tensor。</li>
+</ol>
+<h2>collatefns的工作逻辑</h2>
+<p>coolatefns的输入是个list，长度为batchsize，其中各个元素是各个item，函数的目的就是合并。</p>
+<p>当各个item变长时，不指定collatefns合并就会报错，懒人方法就是把在dataset里面的读取函数把tensor加到最长，就可以直接merge。</p>
+<p>当使用collatefns时，pytorch论坛上有人写了一个函数，我贴过来，大家配合注释看看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pad_tensor</span><span class="params">(vec, pad, dim)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    args:</span></span><br><span class="line"><span class="string">        vec - tensor to pad</span></span><br><span class="line"><span class="string">        pad - the size to pad to</span></span><br><span class="line"><span class="string">        dim - dimension to pad</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    return:</span></span><br><span class="line"><span class="string">        a new tensor padded to 'pad' in dimension 'dim'</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    pad_size = list(vec.shape)</span><br><span class="line">    pad_size[dim] = pad - vec.size(dim)</span><br><span class="line">    <span class="keyword">return</span> torch.cat([vec, torch.zeros(*pad_size)], dim=dim)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PadCollate</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    a variant of callate_fn that pads according to the longest sequence in</span></span><br><span class="line"><span class="string">    a batch of sequences</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, dim=<span class="number">0</span>)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        args:</span></span><br><span class="line"><span class="string">            dim - the dimension to be padded (dimension of time in sequences)</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.dim = dim</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pad_collate</span><span class="params">(self, batch)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        args:</span></span><br><span class="line"><span class="string">            batch - list of (tensor, label)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        reutrn:</span></span><br><span class="line"><span class="string">            xs - a tensor of all examples in 'batch' after padding</span></span><br><span class="line"><span class="string">            ys - a LongTensor of all labels in batch</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># find longest sequence</span></span><br><span class="line">        max_len = max(map(<span class="keyword">lambda</span> x: x[<span class="number">0</span>].shape[self.dim], batch))</span><br><span class="line">        <span class="comment"># pad according to max_len</span></span><br><span class="line">        batch = map(<span class="keyword">lambda</span> (x, y):</span><br><span class="line">                    (pad_tensor(x, pad=max_len, dim=self.dim), y), batch)</span><br><span class="line">        <span class="comment"># stack all</span></span><br><span class="line">        xs = torch.stack(map(<span class="keyword">lambda</span> x: x[<span class="number">0</span>], batch), dim=<span class="number">0</span>)</span><br><span class="line">        ys = torch.LongTensor(map(<span class="keyword">lambda</span> x: x[<span class="number">1</span>], batch))</span><br><span class="line">        <span class="keyword">return</span> xs, ys</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, batch)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.pad_collate(batch)</span><br></pre></td></tr></table></figure>
+<p>调用使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_loader = DataLoader(ds, ..., collate_fn=PadCollate(dim=<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<p>来源：<a href="http://link.zhihu.com/?target=https%3A//discuss.pytorch.org/t/dataloader-for-various-length-of-data/6418/8" target="_blank" rel="noopener">DataLoader for various length of data</a></p>
+<p>对于读取了以后的数据，在rnn中的工作逻辑，pytorch的文档也提到过</p>
+<blockquote>
+<p><code>total_length</code> is useful to implement the <code>packsequence-&gt;recurrentnetwork-&gt;unpacksequence</code> pattern in a <code>Module</code> wrapped in <code>DataParallel</code>. See <a href="http://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/notes/faq.html%23pack-rnn-unpack-with-data-parallelism" target="_blank" rel="noopener">this FAQ section</a>for details.</p>
+</blockquote>
+<p>来源：<a href="http://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/nn.html%23torch.nn.utils.rnn.PackedSequence" target="_blank" rel="noopener">torch.nn - PyTorch master documentation</a></p>
+<p>关于读取到了的padding的变长数据，如何pack，请参考 <a href="https://www.zhihu.com/people/2bcb30744c0f014ce6702f4d94922945" target="_blank" rel="noopener">@尹相楠</a> 的：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/59772104" target="_blank" rel="noopener">尹相楠：PyTorch 训练 RNN 时，序列长度不固定怎么办？</a></p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pytorch/" rel="tag"><i class="fa fa-tag"></i> pytorch</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/repost-tencent-intern-interview-summary/" rel="next" title="【转载】 腾讯算法实习面经">
+                <i class="fa fa-chevron-left"></i> 【转载】 腾讯算法实习面经
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -446,6 +509,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -466,8 +533,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -537,6 +613,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">pytorch里面dataset的工作逻辑：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">dataset的工作逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">dataloader的工作逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">collatefns的工作逻辑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -716,6 +808,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
