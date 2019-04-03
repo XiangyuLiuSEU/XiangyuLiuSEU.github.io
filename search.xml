@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git 使用笔记]]></title>
+    <url>%2F2019%2F04%2F03%2Fgit-note%2F</url>
+    <content type="text"><![CDATA[廖雪峰的 Git 教程 少用 Pull 多用 Fetch 和 Merge 见到很多人说过这个经验，原因就是 git pull 把过程的细节都隐藏了起来，大部分时候是没有问题的，但是当代码出错时可能会造成损失。很多时候我们宁愿做的慢一些，也不愿意返工重来 一般的做法是： 12git fetch origin # 下载远程分支的更新git merge origin/master # 合并远程分支到当前分支 如果你想在合并前查看本地分支和远程分支的差异，可以使用下面的命令： 1git diff master origin/master 单独进行下载和合并是一个好的做法，你可以先看看下载的是什么，然后再决定是否和本地代码合并，方便使用。]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[nvcc 编译报错：找不到 "cuda_runtime.h"]]></title>
     <url>%2F2019%2F04%2F02%2Fnvcc-fatal-error-cuda-runtime-h%2F</url>
-    <content type="text"><![CDATA[奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory 按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 /usr/local/cuda/include 目录下，cuda 安装是没有问题的，这个仓库在实验室的服务器上也跑过，完全没有问题。然而就是这样的错误费了老半天时间也无法定位原因，网上的解决办法无非就是环境变量的问题 😩 难道要因为这个错误重装 cuda？ 重装是不太可能的，服务器上配环境太费事， 于是查看 nvcc 命令帮助，果然其中写着可以用 -I 选项指定包含头文件的路径，迅速在 PANet/lib/make.sh 中有关 nvcc 的命令加上 -I /usr/local/cuda/include ，运行，成功 😎 估计是环境变量出现了某种错误，虽然到最后也没有搞明白为什么会出现这个错误，但好歹是解决了这个问题。这个问题说明了遇事不能只靠百度，要自己好好分析]]></content>
+    <content type="text"><![CDATA[奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory 按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 /usr/local/cuda/include 目录下，cuda 安装是没有问题的，这个仓库在实验室的服务器上也跑过，完全没有问题。然而就是这样的错误费了老半天时间也无法定位原因，网上的解决办法无非就是环境变量的问题，多次确认之后环境变量是没有问题的 😩 难道要因为这个错误重装 cuda？ 重装是不太可能的，服务器上配环境太费事， 于是查看 nvcc 命令帮助，果然其中写着可以用 -I 选项指定包含头文件的路径，迅速在 PANet/lib/make.sh 中有关 nvcc 的命令加上 -I /usr/local/cuda/include ，运行，成功 😎 估计是环境变量出现了某种错误，虽然到最后也没有搞明白为什么会出现这个错误，但好歹是解决了这个问题。这个问题说明了遇事不能只靠百度，要自己好好分析]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -20,6 +31,39 @@
       </categories>
       <tags>
         <tag>env</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Detectron 安装步骤]]></title>
+    <url>%2F2019%2F01%2F20%2Fdetectron-installation%2F</url>
+    <content type="text"><![CDATA[Requirements： Linux 16.04, Python2, NVIDIA GPU (Detectron 目前只有 GPU 版本) CUDA 9.0, cuDNN7.0.5 Caffe2, COCO API 为保持 Python 环境的独立性与完整性，安装前新建一个新的虚拟环境，以下安装过程在虚拟环境中进行 123# 在主环境下conda create -n detectron python=2.7source activate detectron [TOC] CUDA &amp; cuDNN 安装 CUDA9.0 和 cuDNN7.0.5，具体安装步骤参考英伟达官网 Caffe2 1. 从源码编译 以下为源码编译的过程，尝试过安装 Pre-Built Binaries，结果失败了，也可以直接安装预编译文件（推荐），[2. 安装预编译文件](#2. 安装预编译文件) 安装依赖包 1234567891011121314151617181920212223242526sudo apt-get updatesudo apt-get install -y --no-install-recommends \ build-essential \ git \ libgoogle-glog-dev \ libgtest-dev \ libiomp-dev \ libleveldb-dev \ liblmdb-dev \ libopencv-dev \ libopenmpi-dev \ libsnappy-dev \ libprotobuf-dev \ openmpi-bin \ openmpi-doc \ protobuf-compiler \ python-dev \ python-pip \ libgflags-dev \ cmakepip install --user \ future \ numpy \ protobuf \ typing \ hypothesis pip install 使用默认镜像下载速度较慢，可以选择使用清华大学 pypi 镜像 123456# for temporary usepip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package# set to defaultpip install pip -U # upgrade pip to the latest version (&gt;=10.0.0)pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 下载代码仓库并编译 1234git clone https://github.com/pytorch/pytorch.git &amp;&amp; cd pytorchgit submodule update --init --recursive # 安装所需子模块conda install pyyaml # 安装缺少的依赖包python setup.py install 如果编译顺利通过，恭喜，接下来测试 caffe2 安装是否正确，[3. 安装后测试](#3. 安装后测试) 错误信息1：服务器安装的 git 在执行 clone 命令时报错找不到 https 协议，应该是安装不完整导致的，可以在当前环境下重新安装 git 后重试（使用命令 conda install git，推荐）或者使用以下命令代替： 1git clone git://github.com/pytorch/pytorch.git &amp;&amp; cd pytorch 错误信息2（未解决）：在执行安装命令时 (python setup.py install)，出现以下错误： 1······/libmklml_intel.so: file not recognized: File truncated. 该错误指向 pytorch/third_party/ideep/mkl-dnn/external/mklml_lnx_2019.0.1.20180928/lib/libmklml_intel.so 文件，可能是文件不完整导致的错误，但是未找到原因及解决方法。如果出现此错误请尝试通过预编译文件安装 caffe2. 其他错误：查看 Caffe2 troubleshooting 2. 安装预编译文件 Caffe2 只提供 Anaconda 的预编译安装包，需要安装 Anaconda 或 Miniconda 首先添加清华大学维护的 PyTorch 源，下载速度更快： 1conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ 然后执行安装操作： 1conda install pytorch-nightly 3. 安装后测试 安装完成后，测试安装是否成功 123456# To check if Caffe2 build was successfulpython -c 'from caffe2.python import core' 2&gt;/dev/null &amp;&amp; echo "Success" || echo "Failure"# To check if Caffe2 GPU build was successful# This must print a number &gt; 0 in order to use Detectronpython -c 'from caffe2.python import workspace; print(workspace.NumCudaDevices())' 根据执行结果判断安装是否成功 从源码编译需注意： If the caffe2 Python package is not found, you likely need to adjust your PYTHONPATH environment variable to include its location (/path/to/caffe2/build, where build is the Caffe2 CMake build directory). COCO API 依赖： setuptools&gt;=18.0 cython&gt;=0.27.3 matplotlib&gt;=2.1.0 123456conda install setuptools cython matplotlibCOCOAPI=/path/to/clone/cocoapi # 指定安装路径git clone https://github.com/cocodataset/cocoapi.git $COCOAPIcd $COCOAPI/PythonAPImake#python setup.py install --user Detectron 下载代码仓库： 12DETECTRON=/path/to/clone/detectron # 指定安装路径git clone https://github.com/facebookresearch/detectron $DETECTRON 安装 Python 依赖： 1pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r $DETECTRON/requirements.txt 然后 make: 1cd $DETECTRON &amp;&amp; make 安装完成后运行测试： 1python $DETECTRON/detectron/tests/test_spatial_narrow_as_op.py 结果输出 OK，安装完毕 输出以下提示信息不必理会： 12No handlers could be found for logger "caffe2.python.net_drawer"net_drawer will not run correctly. Please install the correct dependencies. Troubleshooting 参照 Detectron Troubleshooting Reference https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md https://caffe2.ai/docs/getting-started.html?platform=ubuntu&amp;configuration=prebuilt https://blog.csdn.net/weixin_43624538/article/details/84712617 P.S. CUDA8.0 cuDNN5.1.10 安装失败，原因：PyTorch 需要 cuDNN&gt;=7.0 查看 CUDA 和 cuDNN 版本： 12345# CUDAcat /usr/local/cuda/version.txt# cuDNNcat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2]]></content>
+      <categories>
+        <category>安装</category>
+      </categories>
+      <tags>
+        <tag>detectron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[YOLOv3 安装步骤]]></title>
+    <url>%2F2019%2F01%2F15%2FYOLOv3-installation%2F</url>
+    <content type="text"><![CDATA[操作系统：Linux 16.04 依赖： CUDA OpenCV darknet 写在前面：conda 是一款非常好用的 python 环境管理工具，建议安装 Anaconda 或 Miniconda。安装及使用请参阅网上教程，安装完成后记得添加清华大学 tuna 镜像。 Anaconda 镜像使用帮助 CUDA 按照网上教程或英伟达官方网站正确安装 CUDA 和 cuDNN（实验室服务器上的版本是 cuda9.0 cudnn7.1） OpenCv 如果安装了 conda，首先进入你想要安装 YOLO 的虚拟环境。第一次使用 Anaconda 请先创建虚拟环境。 1conda create --name YOURNAME python=3.6 numpy pandas matplotlib （YOURNAME 替换为你想要的名字）上述命令将创建新的 python 虚拟环境，并安装常用工具包 numpy, pandas, matplotlib，创建完成后进入虚拟环境 12source activate YOURNAMEsource deactivate # use this one to exit 进入环境后开始安装 OpenCV 1conda install opencv 安装完毕即可 darknet 首先下载 github 仓库 12git clone https://github.com/AlexeyAB/darknet.gitcd darknet 然后打开 Makefile 文件，修改以下选项： 123GPU = 1CUDNN = 1OPENCV = 1 然后在 darknet 目录下执行 1make 如果没有报错，YOLOv3 就安装成功了。测试一下 1./darknet 可以看到输出为： 1usage: ./darknet &lt;function&gt; Reference https://github.com/AlexeyAB/darknet https://pjreddie.com/darknet/yolo/ 🦄]]></content>
+      <categories>
+        <category>安装</category>
+      </categories>
+      <tags>
+        <tag>yolo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PANet 安装步骤]]></title>
+    <url>%2F2019%2F01%2F15%2FPANet-installation%2F</url>
+    <content type="text"><![CDATA[Requirements 操作系统：Linux 16.04 平台：PyTorch 依赖 pytorch = 0.4.0 torchvision &gt;= 0.2.0 cython matplotlib numpy scipy opencv pyyaml packaging pycocotools – for coco dataset tensorboardX – for logging in TensorBoard PyTorch 使用 conda 安装 PyTorch 比较简单，首先进入 conda 环境，然后执行 1conda install pytorch=0.4.0 torchvision cuda90 -c pytorch 其余 cython 等包都可以使用 conda install 或者 pip install 命令来安装，就不再重复了 编译 PANet 首先下载 github 仓库： 12git clone https://github.com/ShuLiu1993/PANet.gitcd PANet 然后编译 12cd lib # please change to this directorysh make.sh 等待编译完成即可。训练代码在 PANet/tools 文件夹下。 如果安装过程报错找不到 cuda_runtime.h，可以查看这里 Reference https://github.com/ShuLiu1993/PANet https://github.com/roytseng-tw/Detectron.pytorch]]></content>
+      <categories>
+        <category>安装</category>
+      </categories>
+      <tags>
+        <tag>panet</tag>
       </tags>
   </entry>
   <entry>

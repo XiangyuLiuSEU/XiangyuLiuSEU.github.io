@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="detectron,">
 
 
 
@@ -112,13 +112,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/Ubuntu/index.html">
+<meta name="description" content="Requirements：  Linux 16.04, Python2, NVIDIA GPU (Detectron 目前只有 GPU 版本) CUDA 9.0, cuDNN7.0.5 Caffe2, COCO API">
+<meta name="keywords" content="detectron">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Detectron 安装步骤">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/01/20/detectron-installation/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="Requirements：  Linux 16.04, Python2, NVIDIA GPU (Detectron 目前只有 GPU 版本) CUDA 9.0, cuDNN7.0.5 Caffe2, COCO API">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-03T04:02:28.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="Detectron 安装步骤">
+<meta name="twitter:description" content="Requirements：  Linux 16.04, Python2, NVIDIA GPU (Detectron 目前只有 GPU 版本) CUDA 9.0, cuDNN7.0.5 Caffe2, COCO API">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/Ubuntu/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/01/20/detectron-installation/">
 
 
 
 
 
-  <title>Tag: Ubuntu | Liu Xiang-Yu's blog</title>
+  <title>Detectron 安装步骤 | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +304,251 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Ubuntu<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/01/20/detectron-installation/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/11/No-Space-in-tmp/" itemprop="url">
-              
-                <span itemprop="name">编译时遇到 /tmp 文件夹空间不足的解决办法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Detectron 安装步骤</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T16:18:10+08:00" content="2018-12-11">
-          12-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T21:39:04+08:00">
+                2019-01-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/安装/" itemprop="url" rel="index">
+                    <span itemprop="name">安装</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>Requirements：</p>
+<ul>
+<li>Linux 16.04, Python2, NVIDIA GPU (Detectron 目前只有 GPU 版本)</li>
+<li>CUDA 9.0, cuDNN7.0.5</li>
+<li>Caffe2, COCO API</li>
+</ul>
+<a id="more"></a>
+<p>为保持 Python 环境的独立性与完整性，安装前新建一个新的虚拟环境，以下安装过程在虚拟环境中进行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在主环境下</span></span><br><span class="line">conda create -n detectron python=2.7</span><br><span class="line"><span class="built_in">source</span> activate detectron</span><br></pre></td></tr></table></figure>
+<hr>
+<p>[TOC]</p>
+<hr>
+<h3>CUDA &amp; cuDNN</h3>
+<p>安装 CUDA9.0 和 cuDNN7.0.5，具体安装步骤参考<a href="https://developer.nvidia.com/accelerated-computing-toolkit" target="_blank" rel="noopener">英伟达官网</a></p>
+<hr>
+<h3>Caffe2</h3>
+<h4>1. 从源码编译</h4>
+<p><em>以下为源码编译的过程，<s>尝试过安装 Pre-Built Binaries，结果失败了</s>，也可以直接安装预编译文件（推荐），[2. 安装预编译文件](#2. 安装预编译文件)</em></p>
+<h5>安装依赖包</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y --no-install-recommends \</span><br><span class="line">      build-essential \</span><br><span class="line">      git \</span><br><span class="line">      libgoogle-glog-dev \</span><br><span class="line">      libgtest-dev \</span><br><span class="line">      libiomp-dev \</span><br><span class="line">      libleveldb-dev \</span><br><span class="line">      liblmdb-dev \</span><br><span class="line">      libopencv-dev \</span><br><span class="line">      libopenmpi-dev \</span><br><span class="line">      libsnappy-dev \</span><br><span class="line">      libprotobuf-dev \</span><br><span class="line">      openmpi-bin \</span><br><span class="line">      openmpi-doc \</span><br><span class="line">      protobuf-compiler \</span><br><span class="line">      python-dev \</span><br><span class="line">      python-pip \</span><br><span class="line">      libgflags-dev \</span><br><span class="line">      cmake</span><br><span class="line">pip install --user \</span><br><span class="line">      future \</span><br><span class="line">      numpy \</span><br><span class="line">      protobuf \</span><br><span class="line">      typing \</span><br><span class="line">      hypothesis</span><br></pre></td></tr></table></figure>
+<p><code>pip install</code> 使用默认镜像下载速度较慢，可以选择使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/" target="_blank" rel="noopener">清华大学 pypi 镜像</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for temporary use</span></span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</span><br><span class="line"></span><br><span class="line"><span class="comment"># set to default</span></span><br><span class="line">pip install pip -U    <span class="comment"># upgrade pip to the latest version (&gt;=10.0.0)</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<h5>下载代码仓库并编译</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pytorch/pytorch.git &amp;&amp; <span class="built_in">cd</span> pytorch</span><br><span class="line">git submodule update --init --recursive    <span class="comment"># 安装所需子模块</span></span><br><span class="line">conda install pyyaml    <span class="comment"># 安装缺少的依赖包</span></span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<p>如果编译顺利通过，恭喜，接下来测试 caffe2 安装是否正确，[3. 安装后测试](#3. 安装后测试)</p>
+<p><strong>错误信息1</strong>：服务器安装的 <code>git</code> 在执行 <code>clone</code> 命令时报错找不到 <code>https</code> 协议，应该是安装不完整导致的，可以在当前环境下重新安装 <code>git</code> 后重试（使用命令 <code>conda install git</code>，推荐）或者使用以下命令代替：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/pytorch/pytorch.git &amp;&amp; <span class="built_in">cd</span> pytorch</span><br></pre></td></tr></table></figure>
+<p><strong>错误信息2（未解决）</strong>：在执行安装命令时 (<code>python setup.py install</code>)，出现以下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">······/libmklml_intel.so: file not recognized: File truncated.</span><br></pre></td></tr></table></figure>
+<p>该错误指向 <code>pytorch/third_party/ideep/mkl-dnn/external/mklml_lnx_2019.0.1.20180928/lib/libmklml_intel.so</code> 文件，可能是文件不完整导致的错误，但是未找到原因及解决方法。如果出现此错误请尝试通过预编译文件安装 caffe2.</p>
+<p><strong>其他错误</strong>：查看 <a href="https://caffe2.ai/docs/faq.html" target="_blank" rel="noopener">Caffe2 troubleshooting</a></p>
+<h4>2. 安装预编译文件</h4>
+<p><em>Caffe2 只提供 Anaconda 的预编译安装包，需要安装 Anaconda 或 Miniconda</em></p>
+<p>首先添加清华大学维护的 PyTorch 源，下载速度更快：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br></pre></td></tr></table></figure>
+<p>然后执行安装操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch-nightly</span><br></pre></td></tr></table></figure>
+<h4>3. 安装后测试</h4>
+<p>安装完成后，测试安装是否成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To check if Caffe2 build was successful</span></span><br><span class="line">python -c <span class="string">'from caffe2.python import core'</span> 2&gt;/dev/null &amp;&amp; <span class="built_in">echo</span> <span class="string">"Success"</span> || <span class="built_in">echo</span> <span class="string">"Failure"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To check if Caffe2 GPU build was successful</span></span><br><span class="line"><span class="comment"># This must print a number &gt; 0 in order to use Detectron</span></span><br><span class="line">python -c <span class="string">'from caffe2.python import workspace; print(workspace.NumCudaDevices())'</span></span><br></pre></td></tr></table></figure>
+<p>根据执行结果判断安装是否成功</p>
+<p>从源码编译需注意：</p>
+<blockquote>
+<p>If the <code>caffe2</code> Python package is not found, you likely need to adjust your <code>PYTHONPATH</code> environment variable to include its location (<code>/path/to/caffe2/build</code>, where <code>build</code> is the Caffe2 CMake build directory).</p>
+</blockquote>
+<hr>
+<h3>COCO API</h3>
+<p>依赖：</p>
+<ul>
+<li>setuptools&gt;=18.0</li>
+<li>cython&gt;=0.27.3</li>
+<li>matplotlib&gt;=2.1.0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda install setuptools cython matplotlib</span><br><span class="line">COCOAPI=/path/to/<span class="built_in">clone</span>/cocoapi    <span class="comment"># 指定安装路径</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/cocodataset/cocoapi.git <span class="variable">$COCOAPI</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$COCOAPI</span>/PythonAPI</span><br><span class="line">make</span><br><span class="line"><span class="comment">#python setup.py install --user</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3>Detectron</h3>
+<p>下载代码仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DETECTRON=/path/to/<span class="built_in">clone</span>/detectron    <span class="comment"># 指定安装路径</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/facebookresearch/detectron <span class="variable">$DETECTRON</span></span><br></pre></td></tr></table></figure>
+<p>安装 Python 依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r <span class="variable">$DETECTRON</span>/requirements.txt</span><br></pre></td></tr></table></figure>
+<p>然后 make:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$DETECTRON</span> &amp;&amp; make</span><br></pre></td></tr></table></figure>
+<p>安装完成后运行测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python <span class="variable">$DETECTRON</span>/detectron/tests/test_spatial_narrow_as_op.py</span><br></pre></td></tr></table></figure>
+<p>结果输出 <code>OK</code>，安装完毕</p>
+<p>输出以下提示信息不必理会：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No handlers could be found <span class="keyword">for</span> logger <span class="string">"caffe2.python.net_drawer"</span></span><br><span class="line">net_drawer will not run correctly. Please install the correct dependencies.</span><br></pre></td></tr></table></figure>
+<hr>
+<h3>Troubleshooting</h3>
+<p>参照 <a href="https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md#troubleshooting" target="_blank" rel="noopener">Detectron Troubleshooting</a></p>
+<h3>Reference</h3>
+<ol>
+<li><a href="https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md" target="_blank" rel="noopener">https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md</a></li>
+<li><a href="https://caffe2.ai/docs/getting-started.html?platform=ubuntu&amp;configuration=prebuilt" target="_blank" rel="noopener">https://caffe2.ai/docs/getting-started.html?platform=ubuntu&amp;configuration=prebuilt</a></li>
+<li><a href="https://blog.csdn.net/weixin_43624538/article/details/84712617" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43624538/article/details/84712617</a></li>
+</ol>
+<h3>P.S.</h3>
+<p><strong>CUDA8.0 cuDNN5.1.10 安装失败，原因：PyTorch 需要 cuDNN&gt;=7.0</strong></p>
+<p>查看 CUDA 和 cuDNN 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CUDA</span></span><br><span class="line">cat /usr/<span class="built_in">local</span>/cuda/version.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># cuDNN</span></span><br><span class="line">cat /usr/<span class="built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/detectron/" rel="tag"><i class="fa fa-tag"></i> detectron</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/15/YOLOv3-installation/" rel="next" title="YOLOv3 安装步骤">
+                <i class="fa fa-chevron-left"></i> YOLOv3 安装步骤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/24/Remote-jupyter-notebook/" rel="prev" title="通过 SSH 隧道连接远程服务器的 Jupyter Notebook">
+                通过 SSH 隧道连接远程服务器的 Jupyter Notebook <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +556,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +660,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">CUDA &amp; cuDNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Caffe2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1. 从源码编译</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.2.</span> <span class="nav-text">下载代码仓库并编译</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">2. 安装预编译文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装后测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">COCO API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Detectron</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Troubleshooting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">P.S.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +855,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

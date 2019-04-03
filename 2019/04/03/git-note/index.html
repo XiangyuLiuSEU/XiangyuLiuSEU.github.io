@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="git,">
 
 
 
@@ -112,13 +112,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/Ubuntu/index.html">
+<meta name="description" content="廖雪峰的 Git 教程 少用 Pull 多用 Fetch 和 Merge 见到很多人说过这个经验，原因就是 git pull 把过程的细节都隐藏了起来，大部分时候是没有问题的，但是当代码出错时可能会造成损失。很多时候我们宁愿做的慢一些，也不愿意返工重来 一般的做法是： 12git fetch origin  # 下载远程分支的更新git merge origin/master  # 合并远程分支到">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 使用笔记">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/03/git-note/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="廖雪峰的 Git 教程 少用 Pull 多用 Fetch 和 Merge 见到很多人说过这个经验，原因就是 git pull 把过程的细节都隐藏了起来，大部分时候是没有问题的，但是当代码出错时可能会造成损失。很多时候我们宁愿做的慢一些，也不愿意返工重来 一般的做法是： 12git fetch origin  # 下载远程分支的更新git merge origin/master  # 合并远程分支到">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-03T03:50:34.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="Git 使用笔记">
+<meta name="twitter:description" content="廖雪峰的 Git 教程 少用 Pull 多用 Fetch 和 Merge 见到很多人说过这个经验，原因就是 git pull 把过程的细节都隐藏了起来，大部分时候是没有问题的，但是当代码出错时可能会造成损失。很多时候我们宁愿做的慢一些，也不愿意返工重来 一般的做法是： 12git fetch origin  # 下载远程分支的更新git merge origin/master  # 合并远程分支到">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/Ubuntu/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/04/03/git-note/">
 
 
 
 
 
-  <title>Tag: Ubuntu | Liu Xiang-Yu's blog</title>
+  <title>Git 使用笔记 | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +304,176 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Ubuntu<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/04/03/git-note/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/11/No-Space-in-tmp/" itemprop="url">
-              
-                <span itemprop="name">编译时遇到 /tmp 文件夹空间不足的解决办法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Git 使用笔记</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T16:18:10+08:00" content="2018-12-11">
-          12-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T11:37:34+08:00">
+                2019-04-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的 Git 教程</a></p>
+<h3>少用 Pull 多用 Fetch 和 Merge</h3>
+<p>见到很多人说过这个经验，原因就是 <code>git pull</code> 把过程的细节都隐藏了起来，大部分时候是没有问题的，但是当代码出错时可能会造成损失。很多时候我们宁愿做的慢一些，也不愿意返工重来</p>
+<p>一般的做法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin  <span class="comment"># 下载远程分支的更新</span></span><br><span class="line">git merge origin/master  <span class="comment"># 合并远程分支到当前分支</span></span><br></pre></td></tr></table></figure>
+<p>如果你想在合并前查看本地分支和远程分支的差异，可以使用下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff master origin/master</span><br></pre></td></tr></table></figure>
+<p>单独进行下载和合并是一个好的做法，你可以先看看下载的是什么，然后再决定是否和本地代码合并，方便使用。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/02/nvcc-fatal-error-cuda-runtime-h/" rel="next" title="nvcc 编译报错：找不到 " cuda_runtime.h""="">
+                <i class="fa fa-chevron-left"></i> nvcc 编译报错：找不到 "cuda_runtime.h"
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +481,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +585,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">少用 Pull 多用 Fetch 和 Merge</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +780,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

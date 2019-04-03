@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="panet,">
 
 
 
@@ -112,13 +112,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/Ubuntu/index.html">
+<meta name="description" content="Requirements  操作系统：Linux 16.04 平台：PyTorch 依赖  pytorch = 0.4.0 torchvision &amp;gt;= 0.2.0 cython matplotlib numpy scipy opencv pyyaml packaging pycocotools – for coco dataset tensorboardX – for logging in">
+<meta name="keywords" content="panet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PANet 安装步骤">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/01/15/PANet-installation/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="Requirements  操作系统：Linux 16.04 平台：PyTorch 依赖  pytorch = 0.4.0 torchvision &amp;gt;= 0.2.0 cython matplotlib numpy scipy opencv pyyaml packaging pycocotools – for coco dataset tensorboardX – for logging in">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-03T04:14:20.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="PANet 安装步骤">
+<meta name="twitter:description" content="Requirements  操作系统：Linux 16.04 平台：PyTorch 依赖  pytorch = 0.4.0 torchvision &amp;gt;= 0.2.0 cython matplotlib numpy scipy opencv pyyaml packaging pycocotools – for coco dataset tensorboardX – for logging in">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/Ubuntu/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/01/15/PANet-installation/">
 
 
 
 
 
-  <title>Tag: Ubuntu | Liu Xiang-Yu's blog</title>
+  <title>PANet 安装步骤 | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +304,209 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Ubuntu<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/01/15/PANet-installation/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/11/No-Space-in-tmp/" itemprop="url">
-              
-                <span itemprop="name">编译时遇到 /tmp 文件夹空间不足的解决办法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PANet 安装步骤</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T16:18:10+08:00" content="2018-12-11">
-          12-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T20:48:01+08:00">
+                2019-01-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/安装/" itemprop="url" rel="index">
+                    <span itemprop="name">安装</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4>Requirements</h4>
+<ul>
+<li>操作系统：Linux 16.04</li>
+<li>平台：PyTorch</li>
+<li>依赖
+<ul>
+<li>pytorch = 0.4.0</li>
+<li>torchvision &gt;= 0.2.0</li>
+<li>cython</li>
+<li>matplotlib</li>
+<li>numpy</li>
+<li>scipy</li>
+<li>opencv</li>
+<li>pyyaml</li>
+<li>packaging</li>
+<li>pycocotools – for coco dataset</li>
+<li>tensorboardX – for logging in TensorBoard</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h4>PyTorch</h4>
+<p>使用 conda 安装 PyTorch 比较简单，首先进入 conda 环境，然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch=0.4.0 torchvision cuda90 -c pytorch</span><br></pre></td></tr></table></figure>
+<p>其余 cython 等包都可以使用 <code>conda install</code> 或者 <code>pip install</code> 命令来安装，就不再重复了</p>
+<h4>编译 PANet</h4>
+<p>首先下载 github 仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ShuLiu1993/PANet.git</span><br><span class="line"><span class="built_in">cd</span> PANet</span><br></pre></td></tr></table></figure>
+<p>然后编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> lib  <span class="comment"># please change to this directory</span></span><br><span class="line">sh make.sh</span><br></pre></td></tr></table></figure>
+<p>等待编译完成即可。训练代码在 <code>PANet/tools</code> 文件夹下。</p>
+<p><em>如果安装过程报错找不到 cuda_runtime.h，可以查看<a href="https://xiangyuliuseu.github.io/2019/04/02/nvcc-fatal-error-cuda-runtime-h/">这里</a></em></p>
+<h4>Reference</h4>
+<ol>
+<li><a href="https://github.com/ShuLiu1993/PANet" target="_blank" rel="noopener">https://github.com/ShuLiu1993/PANet</a></li>
+<li><a href="https://github.com/roytseng-tw/Detectron.pytorch" target="_blank" rel="noopener">https://github.com/roytseng-tw/Detectron.pytorch</a></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/panet/" rel="tag"><i class="fa fa-tag"></i> panet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/Manacher-Algorithm/" rel="next" title="查找回文字符串：马拉车算法 Manacher's Algorithm">
+                <i class="fa fa-chevron-left"></i> 查找回文字符串：马拉车算法 Manacher's Algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/15/YOLOv3-installation/" rel="prev" title="YOLOv3 安装步骤">
+                YOLOv3 安装步骤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +514,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +618,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">PyTorch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">编译 PANet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +813,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

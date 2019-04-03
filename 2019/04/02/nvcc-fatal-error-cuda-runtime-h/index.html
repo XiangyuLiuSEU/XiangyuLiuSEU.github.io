@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory 按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 /usr/local/cuda/include 目录下，cuda">
+<meta name="description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory">
 <meta name="keywords" content="cuda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nvcc 编译报错：找不到 &quot;cuda_runtime.h&quot;">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/02/nvcc-fatal-error-cuda-runtime-h/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory 按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 /usr/local/cuda/include 目录下，cuda">
+<meta property="og:description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-02T15:09:53.027Z">
+<meta property="og:updated_time" content="2019-04-03T04:14:45.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nvcc 编译报错：找不到 &quot;cuda_runtime.h&quot;">
-<meta name="twitter:description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory 按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 /usr/local/cuda/include 目录下，cuda">
+<meta name="twitter:description" content="奇怪的错误 今天在安装 PANet 时遇到了一个奇怪的错误： 12Compiling nms kernels by nvcc...cc1plus: fatal error: cuda_runtime.h: No such file or directory">
 
 
 
@@ -410,7 +410,8 @@
         <h3>奇怪的错误</h3>
 <p>今天在安装 <a href="https://github.com/XiangyuLiuSEU/PANet" target="_blank" rel="noopener">PANet</a> 时遇到了一个奇怪的错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Compiling nms kernels by nvcc...</span><br><span class="line">cc1plus: fatal error: cuda_runtime.h: No such file or directory</span><br></pre></td></tr></table></figure>
-<p>按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 <code>/usr/local/cuda/include</code> 目录下，cuda 安装是没有问题的，这个仓库在实验室的服务器上也跑过，完全没有问题。然而就是这样的错误费了老半天时间也无法定位原因，网上的解决办法无非就是环境变量的问题</p>
+<a id="more"></a>
+<p>按理说不应该出现这种奇怪的错误，cuda_runtime.h 就安静地躺在 <code>/usr/local/cuda/include</code> 目录下，cuda 安装是没有问题的，这个仓库在实验室的服务器上也跑过，完全没有问题。然而就是这样的错误费了老半天时间也无法定位原因，网上的解决办法无非就是环境变量的问题，多次确认之后环境变量是没有问题的</p>
 <p>😩</p>
 <p>难道要因为这个错误重装 cuda？</p>
 <p>重装是不太可能的，服务器上配环境太费事，</p>
@@ -455,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/03/git-note/" rel="prev" title="Git 使用笔记">
+                Git 使用笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -542,7 +547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -553,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

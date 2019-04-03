@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="yolo,">
 
 
 
@@ -112,13 +112,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:url" content="http://xiangyuliuseu.github.io/tags/Ubuntu/index.html">
+<meta name="description" content="操作系统：Linux 16.04 依赖：  CUDA OpenCV darknet     写在前面：conda 是一款非常好用的 python 环境管理工具，建议安装 Anaconda 或 Miniconda。安装及使用请参阅网上教程，安装完成后记得添加清华大学 tuna 镜像。 Anaconda 镜像使用帮助">
+<meta name="keywords" content="yolo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YOLOv3 安装步骤">
+<meta property="og:url" content="http://xiangyuliuseu.github.io/2019/01/15/YOLOv3-installation/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
+<meta property="og:description" content="操作系统：Linux 16.04 依赖：  CUDA OpenCV darknet     写在前面：conda 是一款非常好用的 python 环境管理工具，建议安装 Anaconda 或 Miniconda。安装及使用请参阅网上教程，安装完成后记得添加清华大学 tuna 镜像。 Anaconda 镜像使用帮助">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-03T04:07:37.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu Xiang-Yu&#39;s blog">
+<meta name="twitter:title" content="YOLOv3 安装步骤">
+<meta name="twitter:description" content="操作系统：Linux 16.04 依赖：  CUDA OpenCV darknet     写在前面：conda 是一款非常好用的 python 环境管理工具，建议安装 Anaconda 或 Miniconda。安装及使用请参阅网上教程，安装完成后记得添加清华大学 tuna 镜像。 Anaconda 镜像使用帮助">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://xiangyuliuseu.github.io/tags/Ubuntu/">
+  <link rel="canonical" href="http://xiangyuliuseu.github.io/2019/01/15/YOLOv3-installation/">
 
 
 
 
 
-  <title>Tag: Ubuntu | Liu Xiang-Yu's blog</title>
+  <title>YOLOv3 安装步骤 | Liu Xiang-Yu's blog</title>
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,52 +304,213 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Ubuntu<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiangyuliuseu.github.io/2019/01/15/YOLOv3-installation/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Xiang-Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xiang-Yu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/11/No-Space-in-tmp/" itemprop="url">
-              
-                <span itemprop="name">编译时遇到 /tmp 文件夹空间不足的解决办法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">YOLOv3 安装步骤</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T16:18:10+08:00" content="2018-12-11">
-          12-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T20:48:57+08:00">
+                2019-01-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/安装/" itemprop="url" rel="index">
+                    <span itemprop="name">安装</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>操作系统：Linux 16.04</li>
+<li>依赖：
+<ul>
+<li>CUDA</li>
+<li>OpenCV</li>
+<li>darknet</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>写在前面：conda 是一款非常好用的 python 环境管理工具，<strong>建议安装 Anaconda 或 Miniconda</strong>。安装及使用请参阅网上教程，安装完成后记得添加清华大学 tuna 镜像。</p>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener">Anaconda 镜像使用帮助</a></p>
+</blockquote>
+<a id="more"></a>
+<h4>CUDA</h4>
+<p>按照网上教程或英伟达官方网站正确安装 CUDA 和 cuDNN（实验室服务器上的版本是 cuda9.0 cudnn7.1）</p>
+<h4>OpenCv</h4>
+<p>如果安装了 conda，首先进入你想要安装 YOLO 的虚拟环境。第一次使用 Anaconda 请先创建虚拟环境。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --name YOURNAME python=3.6 numpy pandas matplotlib</span><br></pre></td></tr></table></figure>
+<p>（YOURNAME 替换为你想要的名字）上述命令将创建新的 python 虚拟环境，并安装常用工具包 numpy, pandas, matplotlib，创建完成后进入虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate YOURNAME</span><br><span class="line"><span class="built_in">source</span> deactivate    <span class="comment"># use this one to exit</span></span><br></pre></td></tr></table></figure>
+<p>进入环境后开始安装 OpenCV</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install opencv</span><br></pre></td></tr></table></figure>
+<p>安装完毕即可</p>
+<h4>darknet</h4>
+<p>首先下载 github 仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/AlexeyAB/darknet.git</span><br><span class="line"><span class="built_in">cd</span> darknet</span><br></pre></td></tr></table></figure>
+<p>然后打开 <code>Makefile</code> 文件，修改以下选项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GPU = 1</span><br><span class="line">CUDNN = 1</span><br><span class="line">OPENCV = 1</span><br></pre></td></tr></table></figure>
+<p>然后在 <code>darknet</code> 目录下执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>如果没有报错，YOLOv3 就安装成功了。测试一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./darknet</span><br></pre></td></tr></table></figure>
+<p>可以看到输出为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usage: ./darknet &lt;<span class="keyword">function</span>&gt;</span><br></pre></td></tr></table></figure>
+<h4>Reference</h4>
+<ol>
+<li><a href="https://github.com/AlexeyAB/darknet" target="_blank" rel="noopener">https://github.com/AlexeyAB/darknet</a></li>
+<li><a href="https://pjreddie.com/darknet/yolo/" target="_blank" rel="noopener">https://pjreddie.com/darknet/yolo/</a> 🦄</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/yolo/" rel="tag"><i class="fa fa-tag"></i> yolo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/15/PANet-installation/" rel="next" title="PANet 安装步骤">
+                <i class="fa fa-chevron-left"></i> PANet 安装步骤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/20/detectron-installation/" rel="prev" title="Detectron 安装步骤">
+                Detectron 安装步骤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +518,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -443,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">CUDA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">OpenCv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">darknet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -622,6 +817,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
