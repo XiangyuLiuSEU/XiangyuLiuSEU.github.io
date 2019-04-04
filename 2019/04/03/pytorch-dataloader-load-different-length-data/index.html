@@ -112,20 +112,18 @@
 
 
 
-<meta name="description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
+<meta name="description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
 <meta name="keywords" content="pytorch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyTorch 的 dataloader 如何读取变长数据">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
+<meta property="og:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg">
-<meta property="og:updated_time" content="2019-04-03T06:51:52.597Z">
+<meta property="og:updated_time" content="2019-04-04T05:20:14.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PyTorch 的 dataloader 如何读取变长数据">
-<meta name="twitter:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684  最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在data">
-<meta name="twitter:image" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg">
+<meta name="twitter:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
 
 
 
@@ -409,9 +407,9 @@
       
 
       
-        <p><img src="/2019/04/03/pytorch-dataloader-load-different-length-data/zhihu-card-default.svg" alt="图标"></p>
-<p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
+        <p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
 <p>原文链接：<a href="https://zhuanlan.zhihu.com/p/60129684" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60129684</a></p>
+<a id="more"></a>
 <hr>
 <p>最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用<code>torch.nn.utils.rnn.PackedSequence</code>来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。</p>
 <h2>pytorch里面dataset的工作逻辑：</h2>
@@ -598,7 +596,13 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:1084531286@qq.com" target="_blank" title="E-Mail">
+                    <a href="https://github.com/XiangyuLiuSEU" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xyliu95@qq.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -627,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">pytorch里面dataset的工作逻辑：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">dataset的工作逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">dataloader的工作逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">collatefns的工作逻辑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">pytorch里面dataset的工作逻辑：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">dataset的工作逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">dataloader的工作逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">collatefns的工作逻辑</span></a></li></ol></div>
             
 
           </div>
