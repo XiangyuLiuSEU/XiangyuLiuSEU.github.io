@@ -112,21 +112,21 @@
 
 
 
-<meta name="description" content="作者：阮行止 链接：https://www.zhihu.com/question/23995189/answer/613096905 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入">
+<meta name="description" content="0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入门者的教材不应该是这样的。恰好我给入门者讲过四次DP入门，迭代出了一套比较靠谱的教学方法，所以今天跑过来献丑。 现在，我们试着自己来一步步“重新发明”DP。">
 <meta name="keywords" content="dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="什么是动态规划">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/04/what-is-dynamic-programming/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="作者：阮行止 链接：https://www.zhihu.com/question/23995189/answer/613096905 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入">
+<meta property="og:description" content="0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入门者的教材不应该是这样的。恰好我给入门者讲过四次DP入门，迭代出了一套比较靠谱的教学方法，所以今天跑过来献丑。 现在，我们试着自己来一步步“重新发明”DP。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2019/04/04/what-is-dynamic-programming/v2-6a5ba74fb90968533ece429ed329c903_hd.jpg">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2019/04/04/what-is-dynamic-programming/v2-38e9a487997d2eea979097fbc9e9e674_hd.jpg">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2019/04/04/what-is-dynamic-programming/v2-73ea19922aaac11c15dff9146a5c5b41_hd.jpg">
-<meta property="og:updated_time" content="2019-04-04T06:58:03.311Z">
+<meta property="og:updated_time" content="2019-06-03T07:45:06.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是动态规划">
-<meta name="twitter:description" content="作者：阮行止 链接：https://www.zhihu.com/question/23995189/answer/613096905 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入">
+<meta name="twitter:description" content="0. intro 很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入门者的教材不应该是这样的。恰好我给入门者讲过四次DP入门，迭代出了一套比较靠谱的教学方法，所以今天跑过来献丑。 现在，我们试着自己来一步步“重新发明”DP。">
 <meta name="twitter:image" content="http://xiangyuliuseu.github.io/2019/04/04/what-is-dynamic-programming/v2-6a5ba74fb90968533ece429ed329c903_hd.jpg">
 
 
@@ -411,11 +411,7 @@
       
 
       
-        <p>作者：阮行止</p>
-<p>链接：<a href="https://www.zhihu.com/question/23995189/answer/613096905" target="_blank" rel="noopener">https://www.zhihu.com/question/23995189/answer/613096905</a></p>
-<p>来源：知乎</p>
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h2>0. intro</h2>
+        <h2>0. intro</h2>
 <p>很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入门者的教材不应该是这样的。恰好我给入门者讲过四次DP入门，迭代出了一套比较靠谱的教学方法，所以今天跑过来献丑。</p>
 <p>现在，我们试着自己来一步步“重新发明”DP。</p>
 <a id="more"></a>
@@ -581,6 +577,10 @@ $$</p>
 </blockquote>
 <p>这个性质叫做无后效性。</p>
 <p>另：其实动态规划中的最优状态的说法容易产生误导，以为只需要计算最优状态就好，LIS问题确实如此，转移时只用到了每个阶段“选”的状态。但实际上有的问题往往需要对每个阶段的所有状态都算出一个最优值，然后根据这些最优值再来找最优状态。比如背包问题就需要对前i个包（阶段）容量为j时（状态）计算出最大价值。然后在最后一个阶段中的所有状态种找到最优值。</p>
+<p>作者：阮行止</p>
+<p>链接：<a href="https://www.zhihu.com/question/23995189/answer/613096905" target="_blank" rel="noopener">https://www.zhihu.com/question/23995189/answer/613096905</a></p>
+<p>来源：知乎</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
       
     </div>
@@ -1353,7 +1353,7 @@ show_date_time();
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

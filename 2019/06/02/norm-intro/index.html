@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="统计学习方法,">
 
 
 
@@ -113,6 +113,7 @@
 
 
 <meta name="description" content="什么是范数？ 我们知道距离的定义是一个宽泛的概念，只要满足非负、自反、三角不等式就可以称之为距离。范数是一种强化了的距离概念，它在定义上比距离多了一条数乘的运算法则。有时候为了便于理解，我们可以把范数当作距离来理解。">
+<meta name="keywords" content="统计学习方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几种范数 (norm) 的简单介绍">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2019/06/02/norm-intro/index.html">
@@ -120,7 +121,7 @@
 <meta property="og:description" content="什么是范数？ 我们知道距离的定义是一个宽泛的概念，只要满足非负、自反、三角不等式就可以称之为距离。范数是一种强化了的距离概念，它在定义上比距离多了一条数乘的运算法则。有时候为了便于理解，我们可以把范数当作距离来理解。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://xiangyuliuseu.github.io/2019/06/02/norm-intro/20160623222921977">
-<meta property="og:updated_time" content="2019-06-02T07:49:47.870Z">
+<meta property="og:updated_time" content="2019-06-03T07:41:18.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="几种范数 (norm) 的简单介绍">
 <meta name="twitter:description" content="什么是范数？ 我们知道距离的定义是一个宽泛的概念，只要满足非负、自反、三角不等式就可以称之为距离。范数是一种强化了的距离概念，它在定义上比距离多了一条数乘的运算法则。有时候为了便于理解，我们可以把范数当作距离来理解。">
@@ -359,6 +360,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -391,9 +414,9 @@
 <a id="more"></a>
 <p>在数学上，范数包括向量范数和矩阵范数，向量范数表征向量空间中向量的大小，矩阵范数表征矩阵引起变化的大小。一种非严密的解释就是，对应向量范数，向量空间中的向量都是有大小的，这个大小如何度量，就是用范数来度量的，不同的范数都可以来度量这个大小，就好比米和尺都可以来度量远近一样；对于矩阵范数，学过线性代数，我们知道，通过运算 $AX=B​$，可以将向量 $X​$ 变化为 $B​$，矩阵范数就是来度量这个变化大小的。</p>
 <p>这里简单地介绍以下几种向量范数的定义和含义</p>
-<p>####1、 L-P范数<br>
-与闵可夫斯基距离的定义一样，L-P 范数不是一个范数，而是一组范数，其定义如下：</p>
-<p>$$ L_p={||\text{x}||}<em>p=\sqrt[p]{\sum</em>{i=1}<sup>n{x_i</sup>p}},\ \text{x}=(x_1, x_2, …, x_n) ​$$</p>
+<h4>1、 L-P范数</h4>
+<p>与闵可夫斯基距离的定义一样，L-P 范数不是一个范数，而是一组范数，其定义如下：</p>
+<p>$$ L_{p} = ||\text{x}||_{p} = \sqrt[p]{\sum_{i=1}<sup>{n}{x_i</sup>p}},\ \text{x}=(x_1, x_2, …, x_n) $$</p>
 <p>根据 P 的变化，范数也有着不同的变化，一个经典的有关 P 范数的变化图如下：</p>
 <p><img src="/2019/06/02/norm-intro/20160623222921977" alt="P范数变化图"></p>
 <p>上图表示了 p 从无穷到 0 变化时，三维空间中到原点的距离（范数）为 1 的点构成的图形的变化情况。以常见的 L-2 范数（p=2）为例，此时的范数也即欧氏距离，空间中到原点的欧氏距离为 1 的点构成了一个球面。</p>
@@ -447,6 +470,12 @@ L1 范数有很多的名字，例如我们熟悉的曼哈顿距离、最小绝�
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/统计学习方法/" rel="tag"><i class="fa fa-tag"></i> 统计学习方法</a>
+          
+        </div>
       
 
       
@@ -617,7 +646,7 @@ L1 范数有很多的名字，例如我们熟悉的曼哈顿距离、最小绝�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">什么是范数？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">2、L0范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">3、L1范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">4、L2范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">5、$L_{\infty}$范数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">什么是范数？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">1、 L-P范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">2、L0范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">3、L1范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">4、L2范数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">5、$L_{\infty}$范数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1199,7 +1228,7 @@ show_date_time();
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

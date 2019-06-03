@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
+<meta name="description" content="最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。">
 <meta name="keywords" content="pytorch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyTorch 的 dataloader 如何读取变长数据">
 <meta property="og:url" content="http://xiangyuliuseu.github.io/2019/04/03/pytorch-dataloader-load-different-length-data/index.html">
 <meta property="og:site_name" content="Liu Xiang-Yu&#39;s blog">
-<meta property="og:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
+<meta property="og:description" content="最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-04T05:20:14.568Z">
+<meta property="og:updated_time" content="2019-06-03T07:45:54.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PyTorch 的 dataloader 如何读取变长数据">
-<meta name="twitter:description" content="本文转载自 知乎 Charlie的语音处理实验室 原文链接：https://zhuanlan.zhihu.com/p/60129684">
+<meta name="twitter:description" content="最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用torch.nn.utils.rnn.PackedSequence来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。">
 
 
 
@@ -407,11 +407,8 @@
       
 
       
-        <p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
-<p>原文链接：<a href="https://zhuanlan.zhihu.com/p/60129684" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60129684</a></p>
+        <p>最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用<code>torch.nn.utils.rnn.PackedSequence</code>来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。</p>
 <a id="more"></a>
-<hr>
-<p>最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用<code>torch.nn.utils.rnn.PackedSequence</code>来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。</p>
 <h2>pytorch里面dataset的工作逻辑：</h2>
 <p>pytorch的数据载入主要是这么几个逻辑，从底层一步步来讲，我用h5矩阵，图片和音频三个方面来举例，首先是逻辑层次是，首先把data装进用<code>torch.utils.data.Dataset</code>装进一个dataset的对象里面，然后在把dataset这个对象传递给一个<code>torch.utils.data.DataLoader</code></p>
 <h3>dataset的工作逻辑</h3>
@@ -441,6 +438,8 @@
 <p>来源：<a href="http://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/nn.html%23torch.nn.utils.rnn.PackedSequence" target="_blank" rel="noopener">torch.nn - PyTorch master documentation</a></p>
 <p>关于读取到了的padding的变长数据，如何pack，请参考 <a href="https://www.zhihu.com/people/2bcb30744c0f014ce6702f4d94922945" target="_blank" rel="noopener">@尹相楠</a> 的：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/59772104" target="_blank" rel="noopener">尹相楠：PyTorch 训练 RNN 时，序列长度不固定怎么办？</a></p>
+<p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
+<p>原文链接：<a href="https://zhuanlan.zhihu.com/p/60129684" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60129684</a></p>
 
       
     </div>
@@ -1213,7 +1212,7 @@ show_date_time();
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

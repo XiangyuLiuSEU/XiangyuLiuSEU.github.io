@@ -505,6 +505,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -809,11 +831,7 @@
 
       
         
-          <p>作者：阮行止</p>
-<p>链接：<a href="https://www.zhihu.com/question/23995189/answer/613096905" target="_blank" rel="noopener">https://www.zhihu.com/question/23995189/answer/613096905</a></p>
-<p>来源：知乎</p>
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h2>0. intro</h2>
+          <h2>0. intro</h2>
 <p>很有意思的问题。以往见过许多教材，对动态规划（DP）的引入属于“奉天承运，皇帝诏曰”式：不给出一点引入，见面即拿出一大堆公式吓人；学生则死啃书本，然后突然顿悟。针对入门者的教材不应该是这样的。恰好我给入门者讲过四次DP入门，迭代出了一套比较靠谱的教学方法，所以今天跑过来献丑。</p>
 <p>现在，我们试着自己来一步步“重新发明”DP。</p>
           <!--noindex-->
@@ -961,8 +979,7 @@
 
       
         
-          <p><strong>本文转载自 知乎 <a href="https://zhuanlan.zhihu.com/CharlieAudio" target="_blank" rel="noopener">Charlie的语音处理实验室</a></strong></p>
-<p>原文链接：<a href="https://zhuanlan.zhihu.com/p/60129684" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60129684</a></p>
+          <p>最近在做一个新的声学模型，其中遇到一个点就是每个sentence的长度不一样的花，直接用dataloader的读取是有问题的。查了下中文资料，大家大多数这个问题都是趋于用<code>torch.nn.utils.rnn.PackedSequence</code>来打包的，这个在dataloader里面其实就不太适用，pytorch论坛上提到用dataloader的collate_fn来处理的，所以想写个资料总结下 。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/04/03/pytorch-dataloader-load-different-length-data/" rel="contents">
@@ -2423,7 +2440,7 @@ show_date_time();
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
